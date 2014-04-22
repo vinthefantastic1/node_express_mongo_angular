@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+	<title>Learning AngularJS with PlunetData</title>
+    <!-- http://www.revillweb.com/tutorials/angularjs-in-30-minutes-angularjs-tutorial/-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>
+	<script src="plunetapp.js" type="text/javascript"></script>
+	<script src="plunetcontroller.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id='content' ng-app='PlunetApp' ng-controller='PlunetController'>
+			{{understand}}
+
+        <input type='text' ng-model='inputValue' />
+		{{inputValue}}
+
+    
+        <ol ng-model="plunetJobs">
+            <li ng-repeat="rec in plunetJobs" >{{rec.bsJobNo}} {{rec.document_title}}</li>
+        </ol>
+
+        <table ng-model="plunetJobs">
+            <tr ng-repeat="rec in plunetJobs">
+            <td>{{rec.SAP_bs_jobNo}}</td>
+            </tr>
+        </table>
+	
+
+	</div>
+</body>
+</html>
