@@ -15,12 +15,14 @@
 
     
         <ol ng-model="plunetJobs">
-            <li ng-repeat="rec in plunetJobs" >{{rec.bsJobNo}} {{rec.document_title}}</li>
+            <li ng-repeat="rec in plunetJobs" >{{rec}} {{rec.SAP_bs_jobNo}} - {{rec.plunet_price_element}}</li>
         </ol>
 
         <table ng-model="plunetJobs">
             <tr ng-repeat="rec in plunetJobs">
             <td>{{rec.SAP_bs_jobNo}}</td>
+                <td>{{rec.document_title}}</td>
+                <td> {{rec.Plunet_price_element}}</td>
             </tr>
         </table>
 	
