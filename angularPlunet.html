@@ -8,18 +8,20 @@
 </head>
 <body>
 	<div id='content' ng-app='PlunetApp' ng-controller='PlunetController'>
+          <span>filter by: </span><input type='text' ng-model='searchText' />
+
 			{{understand}}
 
-        <input type='text' ng-model='inputValue' />
+       <input type='text' ng-model='inputValue' />
 		{{inputValue}}
 
     
         <ol ng-model="plunetJobs">
-            <li ng-repeat="rec in plunetJobs" >{{rec}} {{rec.SAP_bs_jobNo}} - {{rec.plunet_price_element}}</li>
+            <li ng-repeat="rec in plunetJobs  | filter:searchText" >{{rec}} </li>
         </ol>
-
+       
         <table ng-model="plunetJobs">
-            <tr ng-repeat="rec in plunetJobs">
+            <tr ng-repeat="rec in plunetJobs | filter:searchText">
             <td>{{rec.SAP_bs_jobNo}}</td>
                 <td>{{rec.document_title}}</td>
                 <td> {{rec.Plunet_price_element}}</td>
