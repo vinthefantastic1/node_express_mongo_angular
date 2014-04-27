@@ -8,20 +8,32 @@
     </head>
     <body>
 
+        <a href="angularfilter.html">angularfilter</a>
 <div ng-app>
   <div ng-controller="SomeCtrl">
       <input ng-model="textProperty"/>      
       <span>{{computedProperty()}}</span> 
   </div>
+
+  <div ng-controller="SomeCtrl2">
+      <input ng-model="textProperty"/>      
+      <span>{{computedProperty()}}</span> 
+  </div>
+
 </div>
         
 <script>
 
     function SomeCtrl($scope) {
       $scope.textProperty = "initial";
-        $scope.computedProperty = function(){return $scope.textProperty+ " asdf";};
+        $scope.computedProperty = function(){return $scope.textProperty+ " 11223344";};
     }
 
+    
+    function SomeCtrl2($scope) {
+      $scope.textProperty = "initial";
+        $scope.computedProperty = function(){return $scope.textProperty+ " control 2";};
+    }
 </script>
 </body>
 
